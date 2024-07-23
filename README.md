@@ -2,6 +2,12 @@
 
 **CrowdMove** is designed to facilitate decentralized fundraising campaigns on a blockchain platform using the Move language.<br/>This contract enables fund creators to establish funding goals, accept donations, and manage withdrawals efficiently. It leverages Move’s resource-oriented programming paradigm to ensure secure and predictable behavior. Additionally, the contract is designed to be flexible, allowing users to customize various aspects according to their specific needs and requirements.
 
+## Advantages
+1. **Decentralized Control**: Removes intermediaries, allowing direct interaction between fundraisers and contributors.
+2. **Transparency**: Maintains a public record of donations and withdrawals, ensuring trust and accountability.
+3. **Security**: Leverages Move’s safety features to prevent unauthorized access and mitigate risks associated with smart contract execution.
+4. **Flexibility**: Offers the ability to make custom adjustments, giving users control over contract features to better align with their project goals.
+
 ## Key Features
 1. **Fund Creation:**
     - The contract allows user to create a crowdfunding campaign by specifying a target funding goal in a generic currency.
@@ -120,14 +126,4 @@ This function enables the fund creator to withdraw accumulated funds once the ta
     ```sh
     aptos move run --function-id 'crowd_fund::fund_contract::withdraw_funds'
     ```
-
-## Advantages
-1. **Decentralized Control**: Removes intermediaries, allowing direct interaction between fundraisers and contributors.
-2. **Transparency**: Maintains a public record of donations and withdrawals, ensuring trust and accountability.
-3. **Security**: Leverages Move’s safety features to prevent unauthorized access and mitigate risks associated with smart contract execution.
-4. **Flexibility**: Offers the ability to make custom adjustments, giving users control over contract features to better align with their project goals.
-
-## Summary
-This crowdfunding smart contract provides a comprehensive and foundational framework for decentralized fundraising efforts, enabling creators to set up and manage campaigns with greater control and transparency. By leveraging blockchain technology, the contract empowers project creators to achieve their financial goals by clearly defining target amounts, tracking contributions, and facilitating withdrawals. Donors benefit from a transparent and secure method of participation, with each transaction recorded immutably on the blockchain. This structure not only ensures that funds are managed responsibly but also fosters trust and accountability throughout the fundraising process. The contract’s flexibility allows for customization to fit various project needs, making it a versatile tool for a wide range of crowdfunding initiatives.
-
 ---
