@@ -52,4 +52,21 @@ module crowd_fund::fund_contract {
         move_to(account, cap);
     }
 
+    // Donate function
+    public fun donate<CoinType>(account: &signer, fund: &mut Fund, amount: u64) acquires Fund {
+        
+        // Transfer the amount from the donor to the fund
+        transfer<CoinType>(account, fund.owner, amount);
+
+        // Increase the raised amount
+        fund.raised += amount;
+
+        // Create a Receipt object for the donor
+        let owner = signer::address_of(account);
+        let receipt = Receipt {
+            owner,
+            amount_donated: amount,
+        };
+        move_to(account, receipt);
+    }
 }
