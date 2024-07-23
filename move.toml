@@ -1,0 +1,17 @@
+# Essential to set up our environment
+[package]
+name = "crowd_fund"
+version = "1.0.0"
+authors = []
+
+[addresses]
+crowd_fund = "0x0"  # Assign a unique address
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
