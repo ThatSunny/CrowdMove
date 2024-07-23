@@ -76,4 +76,18 @@ module crowd_fund::fund_contract {
             std::debug::print(&string::utf8("Target reached!"));
         }
     }
+
+    // Function to withdraw fund
+    public fun withdraw_funds(account: &signer, fund: &mut Fund) acquires Fund, FundOwnerCap {
+        let owner = signer::address_of(account);
+
+        // Checking ownership
+        assert!(owner == fund.owner, ENotFundOwner);
+
+        // Transfer the raised amount back to the fund owner
+        transfer<CoinType>(account, owner, fund.raised);
+
+        // Reset the fund's raised amount
+        fund.raised = 0;
+    }
 }
