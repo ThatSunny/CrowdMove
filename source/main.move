@@ -68,5 +68,12 @@ module crowd_fund::fund_contract {
             amount_donated: amount,
         };
         move_to(account, receipt);
+
+        // Check if the target is reached
+        if fund.raised >= fund.target {
+
+            // Log target reached (this is just for demonstration purposes)
+            std::debug::print(&string::utf8("Target reached!"));
+        }
     }
 }
