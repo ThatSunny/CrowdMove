@@ -30,4 +30,26 @@ module crowd_fund::fund_contract {
         owner: address,
         fund_id: address,
     }
+
+    // Functions
+    // Function to create fund
+    public fun create_fund(account: &signer, target: u64) {
+        let owner = signer::address_of(account);
+        let fund = Fund {
+            owner,
+            target,
+            raised: 0,
+        };
+
+        // Save the Fund object under the owner's address
+        move_to(account, fund);
+
+        // Create and move a FundOwnerCap to the owner
+        let cap = FundOwnerCap {
+            owner,
+            fund_id: owner,
+        };
+        move_to(account, cap);
+    }
+
 }
